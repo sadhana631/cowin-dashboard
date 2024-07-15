@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
-import VaccinationByCoverage from '../VaccinationByCoverage'
+import VaccinationByCoverage from '../VaccinationCoverage'
 import VaccinationByGender from '../VaccinationByGender'
 import VaccinationByAge from '../VaccinationByAge'
 
