@@ -34,17 +34,17 @@ const VaccinationCoverage = props => {
        <YAxis
          tickFormatter={dataFormatter}
          tick={{
-           stroke= '#6c757d' ,
-           strokeWidth=0.5,
-           fontSize= 15,
-           fontFamily= 'Roboto'
+           stroke:'#6c757d' ,
+           strokeWidth: 0.5,
+           fontSize: 15,
+           fontFamily: 'Roboto'
          }}
        />
        <Legend
          wrapperStyle={{
           paddingTop=20,
           textAlign='center'
-          fontSize=12,
+          fontSize= 12,
           fontFamily='Roboto',
          }}
        />
