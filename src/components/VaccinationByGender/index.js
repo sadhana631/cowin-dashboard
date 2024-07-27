@@ -2,7 +2,7 @@ import {PieChart, Pie, Legend, Cell} from 'recharts'
 
 import './index.css'
 
-const VaccinationByGender = prps => {
+const VaccinationByGender = props => {
   const {vaccinationByGenderDetails} = props
 
   return (
