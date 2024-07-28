@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
-import VaccinationByCoverage from '../VaccinationCoverage'
+import VaccinationCoverage from '../VaccinationCoverage'
 import VaccinationByGender from '../VaccinationByGender'
 import VaccinationByAge from '../VaccinationByAge'
 
@@ -79,7 +79,7 @@ class CowinDashboard extends Component {
 
     return (
       <>
-        <VaccinationByCoverage
+        <VaccinationCoverage
           vaccinationCoverageDetails={vaccinationData.last7DaysVaccination}
         />
         <VaccinationByGender
@@ -97,6 +97,7 @@ class CowinDashboard extends Component {
       <Loader color="#ffffff" height={80} type="ThreeDots" width={80} />
     </div>
   )
+  
   renderViewsBasedOnAPIStatus = () => {
     const {apiStatus} = this.state
 
@@ -114,8 +115,8 @@ class CowinDashboard extends Component {
 
   render() {
     return (
-      <div className="api-container">
-        <div className="cowin-dashboaed-container">
+      <div className="app-container">
+        <div className="cowin-dashboard-container">
           <div className="logo-container">
             <img
               className="logo"
@@ -125,7 +126,7 @@ class CowinDashboard extends Component {
             <h1 className="logo-heading">Co-WIN</h1>
           </div>
           <h1 className="heading">CoWIN Vaccination in India</h1>
-          {this.renderViewBasedOnAPISTATUS()}
+          {this.renderViewsBasedOnAPISTATUS()}
         </div>
       </div>
     )
