@@ -1,28 +1,24 @@
 import {PieChart, Pie, Legend, Cell} from 'recharts'
-
 import './index.css'
 
-const VaccinationByGender = props => {
-  const {vaccinationByGenderDetails} = props
-
+const VaccinationByAge = props => {
+  const {vaccinationByAgeDetails} = props
   return (
-    <div className="vaccination-by-gender-container">
-      <h1 className="vaccination-by-gender-heading">Vaccination by gender</h1>
+    <div className="vaccination_by_age_container">
+      <h1 className="vaccination_by_age_heading">VaccinationByAge</h1>
       <PieChart width={1000} height={300}>
         <Pie
+          data={vaccinationByAgeDetails}
           cx="50%"
-          cy="60%"
-          data={vaccinationByGenderDetails}
-          startAngle={180}
-          endAngle={0}
-          innerRadius="30%"
+          cy="30%"
           outeRadius="60%"
           dataKey="count"
         >
-          <Cell name="Male" fill="#f54394" />
-          <Cell name="Female" fill="#5a8dee" />
-          <Cell name="Others" fill="#2cc6c6" />
+          <Cell name="18-44" fill="#2d87bb" />
+          <Cell name="44-60" fill="#a3df9f" />
+          <Cell name="Above 60" fill="#64CeAb" />
         </Pie>
+       
         <Legend
           iconType="circle"
           layout="horizontal"
@@ -35,4 +31,4 @@ const VaccinationByGender = props => {
   )
 }
 
-export default VaccinationByGender
+export default VaccinationByAge

@@ -4,10 +4,10 @@ import './index.css'
 const VaccinationCoverage = props => {
   const dataFormatter = number => {
     if (number > 1000) {
-      return `${(number / 1000).toString()}k`  
+      return `${(number / 1000).toString()}k`
     }
     return number.toString()
-  }  
+  }
   const {vaccinationCoverageDetails} = props
 
   return (
@@ -22,9 +22,9 @@ const VaccinationCoverage = props => {
         }}
       >
         <XAxis
-          dataKey="vaccineDate"
+          dataKey="vaccineData"
           tick={{
-            stroke:'#6c757d',
+            stroke: '#6c757d',
             strokeWidth: 1,
             fontSize: 15,
             fontFamily: 'Roboto',
@@ -33,7 +33,7 @@ const VaccinationCoverage = props => {
         <YAxis
           tickFormatter={dataFormatter}
           tick={{
-            stroke:'#6c757d',
+            stroke: '#6c757d',
             strokeWidth: 0.5,
             fontSize: 15,
             fontFamily: 'Roboto',
@@ -41,10 +41,10 @@ const VaccinationCoverage = props => {
         />
         <Legend
           wrapperStyle={{
-            paddingTop:20,
-            textAlign:'center',
-            fontSize:12,
-            fontFamily:'Roboto',
+            paddingTop: 20,
+            textAlign: 'center',
+            fontSize: 12,
+            fontFamily: 'Roboto',
           }}
         />
         <Bar
@@ -61,7 +61,7 @@ const VaccinationCoverage = props => {
           radius={[5, 5, 0, 0]}
           barSize="20%"
         />
-      </BarChart>    
+      </BarChart>
     </div>
   )
 }
