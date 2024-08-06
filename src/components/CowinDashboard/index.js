@@ -11,7 +11,7 @@ const apiStatusConstants = {
   initial: 'INITIAL',
   success: 'SUCCESS',
   failure: 'FAILURE',
-  inprogress: 'INPROGRESS',
+  inprogress: 'IN_PROGRESS',
 }
 
 class CowinDashboard extends Component {
@@ -31,13 +31,12 @@ class CowinDashboard extends Component {
 
     const covidVaccinationDataApiUrl =
       'https://assets.ccbp.in/covid-vaccination-data'
-    
+
     const response = await fetch(covidVaccinationDataApiUrl)
     if (response.ok === true) {
       const fetchedData = await response.json()
       const updatedData = {
-        last7DaysVaccination: fetchedData.last_7_days_vaccination.map(
-          (eachDayData = {
+        last7DaysVaccination: fetchedData.last_7_days_vaccination.map(eachDayData => ({
             vaccineDate: eachDayData.vaccine_date,
             dose1: eachDayData.dose_1,
             dose2: eachDayData.dose_2,
@@ -76,7 +75,7 @@ class CowinDashboard extends Component {
 
   renderVaccinationStats = () => {
     const {vaccinationData} = this.state
-   
+
     return (
       <>
         <VaccinationCoverage
@@ -93,14 +92,14 @@ class CowinDashboard extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loading-view" data-test-id="loader">
+    <div className="loading-view" data-testid="loader">
       <Loader color="#ffffff" height={80} type="ThreeDots" width={80} />
     </div>
   )
 
   renderViewsBasedOnAPIStatus = () => {
     const {apiStatus} = this.state
-   
+
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderVaccinationStats()
@@ -126,7 +125,7 @@ class CowinDashboard extends Component {
             <h1 className="logo-heading">Co-WIN</h1>
           </div>
           <h1 className="heading">CoWIN Vaccination in India</h1>
-          {this.renderViewsBasedOnAPISTATUS()}
+          {this.renderViewsBasedOnAPIStatus()}
         </div>
       </div>
     )
