@@ -1,5 +1,4 @@
 import {PieChart, Pie, Legend, Cell} from 'recharts'
-
 import './index.css'
 
 const VaccinationByAge = props => {
